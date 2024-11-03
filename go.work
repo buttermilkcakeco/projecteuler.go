@@ -1,0 +1,15 @@
+go 1.21.5
+
+use (
+	./prob1
+	./prob10
+	./prob2
+	./prob3
+	./prob4
+	./prob5
+	./prob6
+	./prob7
+	./prob8
+	./prob9
+	./utils
+)
