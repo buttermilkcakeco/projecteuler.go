@@ -3,11 +3,20 @@ go 1.21.5
 use (
 	./prob1
 	./prob10
+	./prob11
+	./prob12
+	./prob13
+	./prob14
+	./prob15
+	./prob16
+	./prob17
+	./prob18
 	./prob2
 	./prob3
 	./prob4
 	./prob5
 	./prob6
+	./prob67
 	./prob7
 	./prob8
 	./prob9

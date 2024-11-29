@@ -1,16 +1,17 @@
 package main
 
 import (
-	"fmt"
+    "fmt"
+
+    "euler/utils"
 )
 
 func main() {
-	sum := 0
-    for n := 0; n < 1000; n++ {
-		if (n % 3 == 0) || (n % 5 == 0) {
-			sum += n
-		}
+	largest := 0
+
+    for n := range utils.Factorization(600851475143) {
+		largest = n
 	}
 
-	fmt.Println(sum)
+	fmt.Println(largest)
 }

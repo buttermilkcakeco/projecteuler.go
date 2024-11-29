@@ -5,26 +5,26 @@ import (
 )
 
 func Factors(n int) chan int {
-    c := make(chan int)
+	c := make(chan int)
 
-    go func() {
-        m := int(math.Sqrt(float64(n)))
-        for i := 2; i <= m; i++ {
-			if n % i == 0 {
+	go func() {
+		m := int(math.Sqrt(float64(n)))
+		for i := 2; i <= m; i++ {
+			if n%i == 0 {
 				c <- i
 				c <- n / i
 			}
-        }
-        close(c)
-    }()
+		}
+		close(c)
+	}()
 
-    return c
+	return c
 }
 
 func IsPrime(n int) bool {
 	m := int(math.Sqrt(float64(n)))
 	for i := 2; i <= m; i++ {
-		if n % i == 0 {
+		if n%i == 0 {
 			return false
 		}
 	}
@@ -32,32 +32,32 @@ func IsPrime(n int) bool {
 }
 
 func Primes(start int, stop int) chan int {
-    c := make(chan int)
+	c := make(chan int)
 
-    go func() {
-        for i := start; i < stop; i++ {
+	go func() {
+		for i := start; i < stop; i++ {
 			if IsPrime(i) {
 				c <- i
 			}
-        }
-        close(c)
-    }()
+		}
+		close(c)
+	}()
 
-    return c
+	return c
 }
 
 func Factorization(n int) chan int {
-    c := make(chan int)
+	c := make(chan int)
 
-    go func() {
-        m := int(math.Sqrt(float64(n)))
-        for i := 2; i <= m; i++ {
-            if n % i == 0 && IsPrime(i) {
+	go func() {
+		m := int(math.Sqrt(float64(n)))
+		for i := 2; i <= m; i++ {
+			if n%i == 0 && IsPrime(i) {
 				c <- i
 			}
-        }
-        close(c)
-    }()
+		}
+		close(c)
+	}()
 
-    return c
+	return c
 }
